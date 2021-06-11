@@ -40,6 +40,12 @@ def a(client, message):
             thumbnail = results[0]["thumbnails"][0]
             duration = results[0]["duration"]
             views = results[0]["views"]
+
+            ## UNCOMMENT THIS IF YOU WANT A LIMIT ON DURATION. CHANGE 1800 TO YOUR OWN PREFFERED DURATION AND EDIT THE MESSAGE (30 minutes cap) LIMIT IN SECONDS
+            # if time_to_seconds(duration) >= 7000:  # duration limit
+            #     m.edit("Exceeded 30mins cap")
+            #     return
+
             performer = f"[Shamil 9496300461]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
