@@ -1,3 +1,5 @@
+
+
 from pyrogram import Client, filters
 
 import youtube_dl
@@ -16,7 +18,7 @@ def time_to_seconds(time):
 
 ## Commands --------------------------------
 
-@Client.on_message(filters.command("song") & ~filters.channel & ~filters.edited)
+@Client.on_message(filters.command(['song']))
 def a(client, message):
     query = ''
     for i in message.command[1:]:
@@ -46,7 +48,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[Shamil 9496300461]" 
+            performer = f"[MwK-Musics]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -57,17 +59,17 @@ def a(client, message):
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with Command**👨🏼‍🦯\nFor Example: `/song Alone Marshmellow`"
+            "**Enter Song Name with /song Command!**"
         )
         print(str(e))
         return
-    m.edit("`📻 Yup Bruh... Uploading`")
+    m.edit("`Bruh... Uploading... Please Wait...`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🧩 <b>Title:</b> <a href="{link}">{title}</a>\n⏳ <b>Duration:</b> <code>{duration}</code>\n👤 <b>Requested By:</b> {message.from_user.mention()} \n📻 <b>Uploaded By:</b> <a href="https://t.me/mwksongs">MwK-Songs</a>'
+        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwksongs">[MwK] Musics</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -76,7 +78,7 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**Sᴇᴇᴍꜱ Lɪᴋᴇ Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ 🥶 Report This @redbullfed!! !!**')
+        m.edit('**Sᴇᴇᴍꜱ Lɪᴋᴇ Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ 🥶 Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
