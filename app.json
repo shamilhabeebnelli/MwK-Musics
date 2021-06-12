@@ -1,6 +1,6 @@
 {
-  "name": "MwK-Musics PyTGcalls",
-  "description": "Telegram Bot to Play Audio And Live Streams in PyTGcalls",
+  "name": "KicchaRequest bot",
+  "description": "KicchaRequest Bot to Play Audio And Live Streams in PyTGcalls",
   "repository": "https://github.com/shamilhabeebnelli/MwK-Musics",
   "keywords": [
     "telegram",
@@ -67,3 +67,8 @@
     }
   ]
 }
+     "GROUP": "https://t.me/KicchaRequest"
+     }
+   ]
+}
+    " CHANNEL": "https://t.me/GD_FILMCLUB"
