@@ -40,7 +40,7 @@ HELP = """
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.from_user.id not in Config.ADMINS:
         await query.answer(
-            "Go Away Stupid",
+            "Loading.....",
             show_alert=True
             )
         return
