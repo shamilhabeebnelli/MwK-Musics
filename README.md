@@ -67,7 +67,6 @@ python3 main.py
 • Subinps
 • Rojserbest
 • PyTGcalls
-• AsmSafone
 ```
 #### Support
 
