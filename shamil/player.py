@@ -121,7 +121,7 @@ async def yplay(_, message: Message):
             )
             print(str(e))
             return
-        if duration > DURATION_LIMIT:
+        if int(duration) > DURATION_LIMIT:
             await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s)")
             return
 
