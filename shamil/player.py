@@ -1,5 +1,24 @@
+# Regen & Mod by @shamilhabeebnelli
+# Pyrogram - Telegram MTProto API Client Library for Python
+# Copyright (C) 2017-2020 Dan <https://github.com/delivrance>
+#
+# This file is part of Pyrogram.
+#
+# Pyrogram is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Pyrogram is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+from youtube_dl import YoutubeDL
 from config import Config
 from pyrogram import Client, filters, emoji
 from pyrogram.methods.messages.download_media import DEFAULT_DOWNLOAD_DIR
@@ -66,10 +85,10 @@ async def yplay(_, message: Message):
         await mp.start_call()
     if type=="audio":
         if round(m_audio.audio.duration / 60) > DURATION_LIMIT:
-            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s)")
+            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
             return
         if not group_call.is_connected:
-            await mp.start_call()
+            awaitmp.start_call()
         if playlist and playlist[-1][2] \
                 == m_audio.audio.file_id:
             await message.reply_text(f"📻 Already added in Que")
@@ -114,15 +133,21 @@ async def yplay(_, message: Message):
             results = YoutubeSearch(ytquery, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
             title = results[0]["title"][:40]
-            duration = results[0]["duration"]
+            ydl_opts = {
+                "geo-bypass": True,
+                "nocheckcertificate": True
+            }
+            ydl = YoutubeDL(ydl_opts)
+            info = ydl.extract_info(url, False)
+            duration = round(info["duration"] / 60)
         except Exception as e:
             await msg.edit(
-                "😖 Nothing To Be Found... 👎 Can You Check Spelling "
+                "😖 Nothing To Be Found... 👎 Can You Check Spelling"
             )
             print(str(e))
             return
         if int(duration) > DURATION_LIMIT:
-            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s)")
+            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
             return
 
         data={1:title, 2:url, 3:"youtube", 4:user}
