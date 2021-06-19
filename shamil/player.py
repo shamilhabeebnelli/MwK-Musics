@@ -84,8 +84,8 @@ async def yplay(_, message: Message):
     if not group_call.is_connected:
         await mp.start_call()
     if type=="audio":
-        if round(m_audio.audio.duration / 60) > DURATION_LIMIT:
-            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
+        if round(m_audio.audio.duration / 6000) > DURATION_LIMIT:
+            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/6000)} minute(s)")
             return
         if not group_call.is_connected:
             awaitmp.start_call()
@@ -139,7 +139,7 @@ async def yplay(_, message: Message):
             }
             ydl = YoutubeDL(ydl_opts)
             info = ydl.extract_info(url, False)
-            duration = round(info["duration"] / 60)
+            duration = round(info["duration"] / 6000)
         except Exception as e:
             await msg.edit(
                 "😖 Nothing To Be Found... 👎 Can You Check Spelling"
@@ -147,7 +147,7 @@ async def yplay(_, message: Message):
             print(str(e))
             return
         if int(duration) > DURATION_LIMIT:
-            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
+            await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/6000)} minute(s)")
             return
 
         data={1:title, 2:url, 3:"youtube", 4:user}
