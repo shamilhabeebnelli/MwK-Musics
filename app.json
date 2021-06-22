@@ -52,8 +52,8 @@
       "required": false
     }, 
     "DUR" : {
-      "description" : "Limit of Music Duration in minutes"
-      "value" : "10"
+      "description" : "Limit of Music Duration in minutes",
+      "value" : "10",
       "required" : true
 }
   },
