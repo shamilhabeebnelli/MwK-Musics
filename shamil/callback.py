@@ -1,5 +1,3 @@
-
-
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, emoji
 from utils import mp
@@ -8,7 +6,7 @@ playlist=Config.playlist
 
 HELP = """
 
-<b>I Can Play Music On VoiceChats 🤪</b>
+🎧 <b>I Can Play Music On VoiceChats 🤪</b>
 
 🎶 **Common Commands**:
 • `/c`  __Show current playing song__
@@ -152,13 +150,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton('🎭 Developer 🎭️', url='https://t.me/shamilnelli'),
+                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
+                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('🎟️ Movies', url='https://t.me/movieworldkdy'),
-                InlineKeyboardButton('📻 Songs', url='https://t.me/mwksongs'),
-               ],[
-                InlineKeyboardButton('🌎 Source - Code 🌎', url='https://github.com/shamilhabeebnelli/mwk-musics'),
+                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
+                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
+                ],[
+                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -167,4 +165,3 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup
 
         )
-
