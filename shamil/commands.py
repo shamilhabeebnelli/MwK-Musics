@@ -62,8 +62,6 @@ async def start(client, message):
 async def show_help(client, message):
     buttons = [
         [
-            InlineKeyboardButton("🏠 Main Menu 🏠", callback_data="close"),
-                ],[
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
