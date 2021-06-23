@@ -152,13 +152,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton('🎭 Developer 🎭️', url='https://t.me/shamilnelli'),
+                InlineKeyboardButton("❔ How To Use Me ❔", callback_data="HELP"),
                 ],[
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('🎟️ Movies', url='https://t.me/movieworldkdy'),
-                InlineKeyboardButton('📻 Songs', url='https://t.me/mwksongs'),
-               ],[
-                InlineKeyboardButton('🌎 Source - Code 🌎', url='https://github.com/shamilhabeebnelli/mwk-musics'),
+                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
+                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
+                ],[
+                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
+                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
+                ],[
+                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
