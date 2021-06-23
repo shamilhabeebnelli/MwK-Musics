@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 
 HOME_TEXT = "<b>Helo, [{}](tg://user?id={})\n\n• Iam A Bot Project by MwK MusicS\n• I Can Manage Group VC's\n\n• Hit /help to know about available commands.</b>"
 HELP = """
-<b>I Can Play Musics On VoiceChats 🤪</b>
+🎧 <b>I Can Play Musics On VoiceChats 🤪</b>
 
 🎶 **Common Commands**:
 • `/song` __Download Song from youtube__
