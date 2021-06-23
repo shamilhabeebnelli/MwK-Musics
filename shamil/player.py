@@ -46,6 +46,12 @@ playlist=Config.playlist
 
 @Client.on_message(filters.command("p") | filters.audio & filters.private)
 async def yplay(_, message: Message):
+    admins=[]
+    grpadmins=await _.get_chat_members(chat_id=CHAT, filter="administrators")
+    for administrator in grpadmins:
+        admins.append(administrator.user.id)
+    if message.from_user.id not in admins:
+        return
     type=""
     yturl=""
     ysearch=""
@@ -187,6 +193,12 @@ async def yplay(_, message: Message):
    
 @Client.on_message(filters.command("d"))
 async def deezer(_, message):
+    admins=[]
+    grpadmins=await _.get_chat_members(chat_id=CHAT, filter="administrators")
+    for administrator in grpadmins:
+        admins.append(administrator.user.id)
+    if message.from_user.id not in admins:
+        return
     user=f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
     if " " in message.text:
         text = message.text.split(" ", 1)
