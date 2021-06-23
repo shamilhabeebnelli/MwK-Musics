@@ -183,7 +183,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.edit_message_text(
-            HOME_TEXT,
+            start,
             reply_markup=reply_markup
 
         )
