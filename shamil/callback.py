@@ -1,5 +1,3 @@
-
-
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, emoji
 from utils import mp
@@ -8,7 +6,7 @@ playlist=Config.playlist
 
 HELP = """
 
-<b>I Can Play Music On VoiceChats 🤪</b>
+🎧 <b>I Can Play Music On VoiceChats 🤪</b>
 
 🎶 **Common Commands**:
 • `/c`  __Show current playing song__
@@ -152,7 +150,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton("❔ How To Use Me ❔", callback_data="HELP"),
+                InlineKeyboardButton("🏠 Main Menu 🏠", callback_data="start"),
                 ],[
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
