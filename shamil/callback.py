@@ -167,7 +167,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup
 
         )
-     elif query.data=="start":
+     elif query.data=="close":
         buttons = [
             [
                 InlineKeyboardButton("❔ How To Use Me ❔", callback_data="help"),
@@ -183,7 +183,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.edit_message_text(
-            start,
+            HOME_TEXT,
             reply_markup=reply_markup
 
         )
