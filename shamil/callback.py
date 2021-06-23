@@ -150,8 +150,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton("🏠 Main Menu 🏠", callback_data="close"),
-                ],[
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
@@ -164,26 +162,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.edit_message_text(
             HELP,
-            reply_markup=reply_markup
-
-        )
-     elif query.data=="close":
-        buttons = [
-            [
-                InlineKeyboardButton("❔ How To Use Me ❔", callback_data="help"),
-                ],[
-                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
-                ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
-                ],[
-                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.edit_message_text(
-            HOME_TEXT,
             reply_markup=reply_markup
 
         )
