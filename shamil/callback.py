@@ -12,13 +12,15 @@ HELP = """
 
 **Common Commands**:
 
-**/p**  Reply to an audio file or YouTube link to play it or use /p <song name>.
-**/d** Play music from Deezer, Use /d <song name>
+
 **/c**  Show current playing song.
 **/help** Show help for commands
 **/mwk** Shows the playlist.
 
 **Admin Commands**:
+**/p**  Reply to an audio file or YouTube link to play it or use /p <song name>.
+
+**/d** Play music from Deezer, Use /d <song name>
 **/sk** [n] ...  Skip current or n where n >= 2
 **/j**  Join voice chat.
 **/l**  Leave current voice chat
