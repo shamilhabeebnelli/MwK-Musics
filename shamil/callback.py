@@ -10,31 +10,31 @@ HELP = """
 
 <b>I Can Play Music On VoiceChats 🤪</b>
 
-**Common Commands**:
+🎶 **Common Commands**:
+• `/c`  __Show current playing song__
+• `/help` __Show help for commands__
+• `/mwk` __Shows the playlist__
 
+🎶 **Admin Commands**:
+• `/p`  __Reply to an audio file or YouTube link to play it or use /p <song name>__
+• `/d` __Play music from Deezer, Use /d <song name>__
+• `/sk [n]` __...Skip current or n where n >= 2__
+• `/j`  __Join voice chat__
+• `/l`  __Leave current voice chat__
+• `/mwk`  __Check which VC is joined__
+• `/sp`  __Stop playing__
+• `/r` __Start Radio__
+• `/sr` __Stops Radio Stream__
+• `/rp`  __Play from the beginning__
+• `/cl`  __Remove unused RAW PCM files__
+• `/ps` __Pause playing__
+• `/rs` __Resume playing__
+• `/m`  __Mute in VC__
+• `/um`  __Unmute in VC__
+• `/update` __Update Current Settings n Restarts the Bot__
 
-**/c**  Show current playing song.
-**/help** Show help for commands
-**/mwk** Shows the playlist.
-
-**Admin Commands**:
-**/p**  Reply to an audio file or YouTube link to play it or use /p <song name>.
-
-**/d** Play music from Deezer, Use /d <song name>
-**/sk** [n] ...  Skip current or n where n >= 2
-**/j**  Join voice chat.
-**/l**  Leave current voice chat
-**/mwk**  Check which VC is joined.
-**/sp**  Stop playing.
-**/r** Start Radio.
-**/sr** Stops Radio Stream.
-**/rp**  Play from the beginning.
-**/cl** Remove unused RAW PCM files.
-**/ps** Pause playing.
-**/rs** Resume playing.
-**/m**  Mute in VC.
-**/um**  Unmute in VC.
-**/update** Restarts the Bot.
+© Powered By 
+[ __@mwklinks | @redbullfed__ ]
 """
 
 
