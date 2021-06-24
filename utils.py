@@ -40,7 +40,7 @@ playlist=Config.playlist
 msg=Config.msg
 
 bot = Client(
-    "MwkVC",
+    "MwKVC",
     Config.API_ID,
     Config.API_HASH,
     bot_token=Config.BOT_TOKEN
@@ -48,6 +48,7 @@ bot = Client(
 bot.start()
 e=bot.get_me()
 USERNAME=e.username
+
 
 ydl_opts = {
     "format": "bestaudio[ext=m4a]",
@@ -59,17 +60,11 @@ ydl = YoutubeDL(ydl_opts)
 def youtube(url: str) -> str:
     info = ydl.extract_info(url, False)
     duration = round(info["duration"] / 60)
-
-    if duration > DURATION_LIMIT:
-        raise DurationLimitError(
-            f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s)"
-        )
     try:
         ydl.download([url])
-    except:
-        raise DurationLimitError(
-            f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s)"
-        )
+    except Exception as e:
+        print(e)
+        pass
     return path.join("downloads", f"{info['id']}.{info['ext']}")
 
 class MusicPlayer(object):
@@ -77,9 +72,10 @@ class MusicPlayer(object):
         self.group_call = GroupCall(USER, path_to_log_file='')
         self.chat_id = None
 
+
     async def send_playlist(self):
         if not playlist:
-            pl = f"📻 Nothing Is On Playlist Now 📻"
+            pl = f"Playlist is Empty Like Your Brain"
         else:       
             pl = f"🎧 **Playlist**:\n" + "\n".join([
                 f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}\n"
@@ -135,7 +131,7 @@ class MusicPlayer(object):
         #if os.path.exists(raw_file):
             #os.remove(raw_file)
         if not os.path.isfile(raw_file):
-            # credits: @SpeChidE
+            # credits: SpechiDe
             #os.mkfifo(raw_file)
             if song[3] == "telegram":
                 original_file = await bot.download_media(f"{song[2]}")
