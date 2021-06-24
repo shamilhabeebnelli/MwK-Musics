@@ -18,7 +18,7 @@ async def radio(client, message: Message):
 @Client.on_message(filters.command(['sr', f"sr@{USERNAME}"]) & filters.user(ADMINS))
 async def stop(_, message: Message):
     if 0 in RADIO:
-        await message.reply_text("Kindly start Radio First /radio")
+        await message.reply_text("Kindly start Radio First /r")
         return
     await mp.stop_radio()
     await message.reply_text("Radio stream ended.")
