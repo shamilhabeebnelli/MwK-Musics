@@ -57,14 +57,6 @@ HELP = """
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    if query.from_user.id not in Config.ADMINS:
-        await query.answer(
-            "Loading.....",
-            show_alert=True
-            )
-        return
-    else:
-        await query.answer()
     if query.data == "rp":
         group_call = mp.group_call
         if not playlist:
