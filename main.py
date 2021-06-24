@@ -21,14 +21,8 @@ if not os.path.isdir("./downloads"):
     os.makedirs("./downloads")
 async def main():
     async with bot:
-        await mp.startupradio()
-        await asyncio.sleep(2)
-        await mp.startupradio()
+        await mp.start_radio()
 
-def stop_and_restart():
-        bot.stop()
-        os.execl(sys.executable, sys.executable, *sys.argv)
-    
 bot.run(main())
 bot.start()
 @bot.on_message(filters.command("update") & filters.user(Config.ADMINS))
