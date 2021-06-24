@@ -56,7 +56,7 @@ async def yplay(_, message: Message):
             await message.reply_sticker("CAACAgUAAxkBAAIJM2DTpi52NSM-O-KnYcC1IzbJos8HAAK6AQACsm0wVffnRbQlKgeTHwQ")
             await message.delete()
             return
- type=""
+    type=""
     yturl=""
     ysearch=""
     if message.audio:
