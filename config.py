@@ -50,7 +50,7 @@ class Config:
     else:
         LOG_GROUP=None
     STREAM_URL=finalurl
-    ADMIN_ONLY=os.environ.get("ADMIN_ONLY", "N")
+    ADMIN_ONLY=os.environ.get("ADMIN_ONLY", "Y")
     ARQ_API=os.environ.get("ARQ_API", "")
     DURATION_LIMIT=int(os.environ.get("DUR", 15))
     API_HASH = os.environ.get("API_HASH", "")
