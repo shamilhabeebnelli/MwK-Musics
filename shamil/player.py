@@ -184,7 +184,7 @@ async def yplay(_, message: Message):
             await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
             return
 
-         data={1:title, 2:url, 3:"youtube", 4:user}
+        data={1:title, 2:url, 3:"youtube", 4:user}
         playlist.append(data)
         group_call = mp.group_call
         client = group_call.client
