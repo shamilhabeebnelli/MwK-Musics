@@ -1,4 +1,4 @@
-# Regen & Mod by @shamilhabeebnelli
+# Regen & Mod by @sachin_official_admin
 # Pyrogram - Telegram MTProto API Client Library for Python
 # Copyright (C) 2017-2020 Dan <https://github.com/delivrance>
 #
