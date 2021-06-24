@@ -1,6 +1,13 @@
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters
+import signal
+from utils import USERNAME, FFMPEG_PROCESSES
+from config import Config
+import os
+import sys
+U=USERNAME
+CHAT=Config.CHAT
 
 
 
@@ -55,7 +62,7 @@ async def start(client, message):
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_photo(photo="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg", caption=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
-
+    await message.delete()
 
 
 @Client.on_message(filters.command("help"))
@@ -73,3 +80,4 @@ async def show_help(client, message):
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_photo(photo="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg", caption=HELP, reply_markup=reply_markup)
+    await message.delete()
