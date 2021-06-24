@@ -543,4 +543,4 @@ admincmds=["j", "um", "m", "l", "cl", "mwk", "ps", "rs", "sp", "sk", "r", "sr", 
 
 @Client.on_message(filters.command(admincmds) & ~filters.user(ADMINS))
 async def notforu(_, m: Message):
-    await.message.reply_sticker("CAACAgUAAxkBAAIJM2DTpi52NSM-O-KnYcC1IzbJos8HAAK6AQACsm0wVffnRbQlKgeTHwQ")
+    await message.reply_sticker("CAACAgUAAxkBAAIJM2DTpi52NSM-O-KnYcC1IzbJos8HAAK6AQACsm0wVffnRbQlKgeTHwQ")
