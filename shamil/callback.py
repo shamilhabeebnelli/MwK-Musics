@@ -65,8 +65,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if not playlist:
             pl = f"😖 Nothing On Que Ser"
         else:
-            pl = f"📻 **Playlist**:\n" + "\n".join([
-                f"**{i}**. **🎧{x[1]}**\n   👤**Requested by:** {x[4]}"
+            pl = f"🎧 **Playlist**:\n" + "\n".join([
+                f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}"
                 for i, x in enumerate(playlist)
                 ])
         await query.edit_message_text(
@@ -75,11 +75,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔄 Replay", callback_data="rp"),
-                            InlineKeyboardButton("⏯ Pause", callback_data="ps")
+                            InlineKeyboardButton("Replay", callback_data="rp"),
+                            InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
-                            InlineKeyboardButton("⏩ Skip", callback_data="sk"),
-                            InlineKeyboardButton("📻 Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Skip", callback_data="sk"),
+                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
                         ]
                     ]
                 )
@@ -98,11 +98,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔄 Replay", callback_data="rp"),
-                            InlineKeyboardButton("⏯ Pause", callback_data="ps")
+                            InlineKeyboardButton("Replay", callback_data="rp"),
+                            InlineKeyboardButton("Resume", callback_data="rs")
                         ],[
-                            InlineKeyboardButton("⏩ Skip", callback_data="sk"),
-                            InlineKeyboardButton("📻 Musics", url='https://t.me/mwksongs')
+                            InlineKeyboardButton("Skip", callback_data="sk"),
+                            InlineKeyboardButton("Musics", url='https://t.me/mwksongs')
                         ],
                     ]
                 )
@@ -122,11 +122,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔄 Replay", callback_data="rp"),
-                            InlineKeyboardButton("⏯ Pause", callback_data="ps")
+                            InlineKeyboardButton("Replay", callback_data="rp"),
+                            InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
-                            InlineKeyboardButton("⏩ Skip", callback_data="sk"),
-                            InlineKeyboardButton("📻 Musics", url="https://t.me/mwksongs") 
+                            InlineKeyboardButton("Skip", callback_data="sk"),
+                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs") 
                         ],
                     ]
                 )
@@ -146,11 +146,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔄 Replay", callback_data="rp"),
-                            InlineKeyboardButton("⏯ Pause", callback_data="ps")
+                        InlineKeyboardButton("Replay", callback_data="rp"),
+                            InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
-                            InlineKeyboardButton("⏩ Skip", callback_data="sk"),
-                            InlineKeyboardButton("📻 Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Skip", callback_data="sk"),
+                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
                             
                     ],
                 ]
