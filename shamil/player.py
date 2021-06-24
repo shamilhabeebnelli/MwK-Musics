@@ -534,7 +534,7 @@ async def show_playlist(_, m: Message):
     else:
         pl = f"🎧 **Playlist**:\n" + "\n".join([
             f"**{i}**. **📻️{x[1]}**\n   👤**Requested by:** {x[4]}"
-            for i, x in enumerate(playlist)
+            for i, x in enumerate(play)
             ])
     await m.reply_text(pl)
     await m.delete()
@@ -543,4 +543,4 @@ admincmds=["j", "um", "m", "l", "cl", "mwk", "ps", "rs", "sp", "sk", "r", "sr", 
 
 @Client.on_message(filters.command(admincmds) & ~filters.user(ADMINS))
 async def notforu(_, m: Message):
-    await m.reply_sticker("CAACAgUAAxkBAAIJOGDUCyOT9LLydcmg-MBOkvWskqDrAAItAwAC2iNxVSlXHhx2DbtdHwQ")
+    await.m.reply_sticker("CAACAgUAAxkBAAIJM2DTpi52NSM-O-KnYcC1IzbJos8HAAK6AQACsm0wVffnRbQlKgeTHwQ")
