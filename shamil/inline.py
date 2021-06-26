@@ -41,7 +41,7 @@ buttons = [
 @Client.on_inline_query()
 async def search(client, query):
     answers = []
-    if query.query == "ORU_MANDAN_PM_VANNU":
+    if query.query == "KOUTHUKAM_LESHAM_KOODUTHALA":
         answers.append(
             InlineQueryResultArticle(
                 title="Do You Wanna Help Huh?",
