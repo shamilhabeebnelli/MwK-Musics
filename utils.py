@@ -27,18 +27,6 @@ import signal
 from pyrogram import Client
 from youtube_dl import YoutubeDL
 from os import path
-from user import USER
-import wget
-STREAM_URL=Config.STREAM_URL
-CHAT=Config.CHAT
-GROUP_CALLS = {}
-FFMPEG_PROCESSES = {}
-RADIO={6}
-LOG_GROUP=Config.LOG_GROUP
-DURATION_LIMIT=Config.DURATION_LIMIT
-playlist=Config.playlist
-msg=Config.msg
-
 bot = Client(
     "MwKVC",
     Config.API_ID,
@@ -48,6 +36,17 @@ bot = Client(
 bot.start()
 e=bot.get_me()
 USERNAME=e.username
+
+from user import USER
+STREAM_URL=Config.STREAM_URL
+CHAT=Config.CHAT
+GROUP_CALLS = {}
+FFMPEG_PROCESSES = {}
+RADIO={6}
+LOG_GROUP=Config.LOG_GROUP
+DURATION_LIMIT=Config.DURATION_LIMIT
+playlist=Config.playlist
+msg=Config.msg
 
 
 ydl_opts = {
