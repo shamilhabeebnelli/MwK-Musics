@@ -37,7 +37,7 @@
     },
     "CHAT": {
       "description": "ID of Channel or Group where the Bot plays Music",
-      "value": "-100"
+      "value": "-100",
       "required": true
     },
     "LOG_GROUP": {
@@ -46,7 +46,7 @@
     },
     "ADMINS": {
       "description": "ID of Users who can use Admin commands seperated by space)",
-      "value": "749673781"
+      "value": "749673781",
       "required": true
     },
     "STREAM_URL": {
@@ -56,7 +56,7 @@
     },
     "REPLY_MESSAGE": {
       "description": "No_PM message for session account",
-      "value": "Hi jam a bot, i can stream audios on vc.",
+      "value": "Hi Iam a bot, i can stream audios on vc.",
       "required": false
     },
     "ADMIN_ONLY": {
