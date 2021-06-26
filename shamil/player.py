@@ -72,7 +72,7 @@ async def yplay(_, message: Message):
             match = re.match(regex,link)
             if match:
                 type="youtube"
-                yturl=message.text
+                yturl=link
         elif " " in message.text:
             text = message.text.split(" ", 1)
             query = text[1]
@@ -149,37 +149,34 @@ async def yplay(_, message: Message):
                 ])
         if LOG_GROUP and message.chat.id != LOG_GROUP:
             await message.reply_text(pl)
-        for track in playlist[:2]:
-            await mp.download_audio(track)
-        if LOG_GROUP:
-            await mp.send_playlist()
-        else:
-            await message.reply_text(pl)
     if type=="youtube" or type=="query":
         if type=="youtube":
-            ytquery=yturl
+            msg = await message.reply_text("**Let Me Check It On Ytb For A While....**")
+            url=yturl
         elif type=="query":
-            ytquery=ysearch
+            try:
+                msg = await message.reply_text("**Let Me Check It On Ytb For A While....**")
+                ytquery=ysearch
+                results = YoutubeSearch(ytquery, max_results=1).to_dict()
+                url = f"https://youtube.com{results[0]['url_suffix']}"
+                title = results[0]["title"][:40]
+            except Exception as e:
+                await msg.edit(
+                    "Sed Nothing Is Found For Your Query, Ensure spelling or choose inline"
+                )
+                print(str(e))
+                return
         else:
             return
-        msg = await message.reply_text("📻️ **Im On It Bruh...**")
-        try:
-            results = YoutubeSearch(ytquery, max_results=1).to_dict()
-            url = f"https://youtube.com{results[0]['url_suffix']}"
-            title = results[0]["title"][:40]
             ydl_opts = {
                 "geo-bypass": True,
-                "nocheckcertificate": True
-            }
-            ydl = YoutubeDL(ydl_opts)
-            info = ydl.extract_info(url, False)
-            duration = round(info["duration"] / 60)
-        except Exception as e:
-            await msg.edit(
-                "😖 Nothing To Be Found... 👎 Can You Check Spelling"
-            )
-            print(str(e))
-            return
+            "nocheckcertificate": True
+        }
+        ydl = YoutubeDL(ydl_opts)
+        info = ydl.extract_info(url, False)
+        duration = round(info["duration"] / 60)
+        print(info)
+        title= info["title"]
         if int(duration) > DURATION_LIMIT:
             await message.reply_text(f"😖 Oops Its Too Lengthy... Permitted Limit is {DURATION_LIMIT} minute(s) this video is {round(m_audio.audio.duration/60)} minute(s)")
             return
