@@ -1,6 +1,7 @@
 {
   "name": "MwK-Musics PyTGcalls",
   "description": "Telegram Bot to Play Audio And Live Streams in PyTGcalls",
+  "logo": "https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
   "repository": "https://github.com/shamilhabeebnelli/MwK-Musics",
   "keywords": [
     "telegram",
