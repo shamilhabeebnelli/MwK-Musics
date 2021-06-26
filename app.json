@@ -37,6 +37,7 @@
     },
     "CHAT": {
       "description": "ID of Channel or Group where the Bot plays Music",
+      "value": "-100"
       "required": true
     },
     "LOG_GROUP": {
@@ -44,16 +45,17 @@
       "required": false
     },
     "ADMINS": {
-      "description": "ID of Users who can use Admin commands(for multiple users seperated by space)",
+      "description": "ID of Users who can use Admin commands seperated by space)",
+      "value": "749673781"
       "required": true
     },
     "STREAM_URL": {
-      "description": "URL of Radio station or Youtube live video url to stream with /radio command",
+      "description": "URL of Radio station or Youtube live video url to stream with /r command",
       "value": "https://youtu.be/W9NyVYHtrIU",
       "required": false
     },
     "REPLY_MESSAGE": {
-      "description": "No PM module for session account",
+      "description": "No_PM message for session account",
       "value": "Hi jam a bot, i can stream audios on vc.",
       "required": false
     },
