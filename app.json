@@ -50,6 +50,21 @@
       "description": "URL of Radio station or Youtube live video url to stream with /radio command",
       "value": "https://youtu.be/W9NyVYHtrIU",
       "required": false
+    },
+    "REPLY_MESSAGE": {
+      "description": "No PM module for session account",
+      "value": "Hi jam a bot, i can stream audios on vc.",
+      "required": false
+    },
+    "ADMIN_ONLY": {
+      "description": "Make All Commands Admin Only Usable Y/N",
+      "value": "Y",
+      "required": false
+    },
+    "DUR": {
+      "description": "Keep This Blank if you dont now what it is, Maximum duration of song to play.(Optional)",
+      "value": "6000",
+      "required": false
 }
   },
   "formation": {
