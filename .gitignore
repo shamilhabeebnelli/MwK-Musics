@@ -1,6 +1,6 @@
-#--------------------------#
-# Magento Default Files    #
-#--------------------------#
+#---------------------------------#
+# Shamil X MwK Musics - @MwKLinks #
+#---------------------------------#
 
 /PATCH_*.sh
 
@@ -43,3 +43,10 @@
 /var/package/*
 !/var/package/*.xml
 
+*.pyc
+*.raw
+*.log
+*.session
+unknown_errors.txt
+*.session-journal
+.env
