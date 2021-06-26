@@ -8,7 +8,7 @@ if REPLY_MESSAGE is not None:
         Config.SESSION,
         Config.API_ID,
         Config.API_HASH,
-        plugins=dict(root="shamil.mwkub.no_pm")
+        plugins=dict(root="shamil.mwkub")
         )
 else:
     USER = Client(
