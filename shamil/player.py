@@ -276,14 +276,16 @@ async def deezer(_, message):
             f"{file}.raw"
         )
         await m_status.delete()
-            print(f"- START PLAYING: {playlist[0][1]}")
-        if not playlist:
-            pl = f"📻 Nothing Is On Que"
-        else:   
-            pl = f"🎧 **Que**:\n" + "\n".join([
-                f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}"
-                for i, x in enumerate(playlist)
-                ])
+        print(f"- START PLAYING: {playlist[0][1]}")
+    else:
+        await msg.delete()
+    if not playlist:
+        pl = f"{emoji.NO_ENTRY} Empty playlist"
+    else:
+        pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
+            f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}"
+            for i, x in enumerate(playlist)
+            ])
     if LOG_GROUP and message.chat.id != LOG_GROUP:
         await message.reply_text(pl)
     for track in playlist[:2]:
@@ -511,7 +513,7 @@ async def unmute(_, m: Message):
     await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} Unmuted")
     await m.delete()
 
-@Client.on_message(filters.command(["playlist", f"playlist@{U}"]))
+@Client.on_message(filters.command(["q", f"q@{U}"]))
 async def show_playlist(_, m: Message):
     group_call = mp.group_call
     if not group_call.is_connected:
