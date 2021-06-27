@@ -45,8 +45,8 @@ async def search(client, query):
         answers.append(
             InlineQueryResultPhoto(
                 title=" do you wanna help huh?"
-                photo_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
-                caption="{REPLY_MESSAGE}\n\n**Dude No One Can Help You 🤤 Contact @redbullfed**",
+                photo="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
+                caption="{REPLY_MESSAGE}\n\n**Powered By** [ __@MwKLinks | @RedbullFED__ ]",
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
