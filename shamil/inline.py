@@ -45,7 +45,7 @@ async def search(client, query):
         answers.append(
             InlineQueryResultArticle(
                 title="Do You Wanna Help Huh?",
-                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>Dude No One Can Help You 🤤 Contact @redbullfed,
+                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>Dude No One Can Help You 🤤 Contact @redbullfed),
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
