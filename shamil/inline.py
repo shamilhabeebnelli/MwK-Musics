@@ -43,9 +43,10 @@ async def search(client, query):
     answers = []
     if query.query == "KOUTHUKAM_LESHAM_KOODUTHALA":
         answers.append(
-            InlineQueryResultArticle(
-                title="Do You Wanna Help Huh?",
-                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>Dude No One Can Help You 🤤 Contact @redbullfed"),
+            InlineQueryResultPhoto(
+                title=" do you wanna help huh?"
+                photo_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
+                caption="{REPLY_MESSAGE}\n\n**Dude No One Can Help You 🤤 Contact @redbullfed**",
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
