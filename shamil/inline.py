@@ -44,12 +44,12 @@ async def search(client, query):
     if query.query == "KOUTHUKAM_LESHAM_KOODUTHALA":
         answers.append(
             InlineQueryResultPhoto(
-                title="do you wanna help huh?"
-                thumb_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
-                photo_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
-                caption="{REPLY_MESSAGE}\n\n**Powered By** [ __@MwKLinks | @RedbullFED__ ]",
-                reply_markup=InlineKeyboardMarkup(buttons)
-                )
+                    title="do you wanna help huh?"
+                    thumb_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
+                    photo_url="https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
+                    caption="{REPLY_MESSAGE}\n\n**Powered By** [ __@MwKLinks | @RedbullFED__ ]",
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                    )
             )
         await query.answer(results=answers, cache_time=0)
         return
