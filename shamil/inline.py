@@ -31,9 +31,6 @@ buttons = [
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
-                ],[
                 InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),       
     ]
     ]
