@@ -61,3 +61,39 @@ async def search(client, query):
     else:
         videosSearch = VideosSearch(string.lower(), limit=50)
         for v in videosSearch.result()["result"]:
+            answers.append(
+                InlineQueryResultArticle(
+                    title=v["title"],
+                    description=("Duration: {} Views: {}").format(
+                        v["duration"],
+                        v["viewCount"]["short"]
+                    ),
+                    input_message_content=InputTextMessageContent(
+                        "/play https://www.youtube.com/watch?v={}".format(
+                            v["id"]
+                        )
+                    ),
+                    thumb_url=v["thumbnails"][0]["url"]
+                )
+            )
+        try:
+            await query.answer(
+                results=answers,
+                cache_time=0
+            )
+        except errors.QueryIdInvalid:
+            await query.answer(
+                results=answers,
+                cache_time=0,
+                switch_pm_text=("Nothing found"),
+                switch_pm_parameter="",
+            )
+
+
+__handlers__ = [
+    [
+        InlineQueryHandler(
+            search
+        )
+    ]
+]
