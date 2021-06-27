@@ -20,7 +20,7 @@
 from pyrogram.handlers import InlineQueryHandler
 from youtubesearchpython import VideosSearch
 from utils import USERNAME
-from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultPhoto
 from pyrogram import Client, errors
 from config import Config
 REPLY_MESSAGE=Config.REPLY_MESSAGE
