@@ -11,3 +11,6 @@ youtube_search_python
 youtube_search
 wget
 requests
+pyrogram
+python-decouple
+tgcrypto
