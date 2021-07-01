@@ -38,6 +38,7 @@ HELP = """
 • `/c`  __Show current playing song__
 • `/help` __Show help for commands__
 • `/mwk` __Shows the playlist__
+• `/stickerid` __To Get Id Of Replied Sticker__
 
 🎶 **Admin Commands**:
 • `/p`  __Reply to an audio file or YouTube link to play it or use /p <song name>__
