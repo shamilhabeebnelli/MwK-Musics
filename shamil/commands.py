@@ -29,7 +29,7 @@ U=USERNAME
 CHAT=Config.CHAT
 
 
-HOME_TEXT = "<b>Helo, [{}](tg://user?id={})\n\n• Iam A Bot Project by MwK MusicS\n• I Can Manage Group VC's\n\n• Hit /help to know about available commands.</b>"
+HOME_TEXT = "<b>I AM THE SINGER OF [MOVIE ARCADE](https://t.me/MOVIE_ARCADE) GROUP.</b>"
 HELP = """
 🎧 <b>I Can Play Musics On VoiceChats 🤪</b>
 
@@ -58,8 +58,8 @@ HELP = """
 • `/um`  __Unmute in VC__
 • `/update` __Update Current Settings n Restarts the Bot__
 
-© Powered By 
-[ __@mwklinks | @redbullfed__ ]
+© Powered By
+[@MOVIE_ARCADE]
 """
 
 
