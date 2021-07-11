@@ -107,4 +107,4 @@ async def ytmusic(client, message: Message):
     is_downloading = False
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
-            os.remove(files)
+            os.remove(files) 
