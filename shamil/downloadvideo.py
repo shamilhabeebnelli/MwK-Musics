@@ -21,7 +21,7 @@ from Python_ARQ import ARQ
 
 DURATION_LIMIT = Config.DURATION_LIMIT
 ARQ_API=Config.ARQ_API
-arq = ARQ("https://thearq.tech",ARQ_API,session)
+arq = ARQ("https://thearq.tech",ARQ_API)
 playlist=Config.playlist
 
 @Client.on_message(filters.command(["video"]))
