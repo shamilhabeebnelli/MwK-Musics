@@ -21,7 +21,6 @@ from Python_ARQ import ARQ
 
 DURATION_LIMIT = Config.DURATION_LIMIT
 ARQ_API=Config.ARQ_API
-session = ClientSession()
 arq = ARQ("https://thearq.tech",ARQ_API,session)
 playlist=Config.playlist
 
