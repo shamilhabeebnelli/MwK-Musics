@@ -36,8 +36,9 @@ HELP = """
 """
 
 
-
-    elif query.data=="help":
+@Client.on_callback_query()
+async def cb_handler(client: Client, query: CallbackQuery):
+    if query.data=="help":
         buttons = [
             [
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
