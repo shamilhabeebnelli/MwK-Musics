@@ -49,22 +49,6 @@ playlist=Config.playlist
 msg=Config.msg
 
 
-ydl_opts = {
-    "format": "bestaudio[ext=m4a]",
-    "geo-bypass": True,
-    "nocheckcertificate": True,
-    "outtmpl": "downloads/%(id)s.%(ext)s",
-}
-ydl = YoutubeDL(ydl_opts)
-def youtube(url: str) -> str:
-    info = ydl.extract_info(url, False)
-    duration = round(info["duration"] / 60)
-    try:
-        ydl.download([url])
-    except Exception as e:
-        print(e)
-        pass
-    return path.join("downloads", f"{info['id']}.{info['ext']}")
 
 class MusicPlayer(object):
     def __init__(self):
@@ -72,43 +56,7 @@ class MusicPlayer(object):
         self.chat_id = None
 
 
-    async def send_playlist(self):
-        if not playlist:
-            pl = f"Playlist is Empty Like Your Brain"
-        else:       
-            pl = f"🎧 **Playlist**:\n" + "\n".join([
-                f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}\n"
-                for i, x in enumerate(playlist)
-            ])
-        if msg.get('playlist') is not None:
-            await msg['playlist'].delete()
-        msg['playlist'] = await self.send_text(pl)
-
-    async def skip_current_playing(self):
-        group_call = self.group_call
-        if not playlist:
-            return
-        if len(playlist) == 1:
-            await mp.start_radio()
-            return
-        client = group_call.client
-        download_dir = os.path.join(client.workdir, DEFAULT_DOWNLOAD_DIR)
-        group_call.input_filename = os.path.join(
-            download_dir,
-            f"{playlist[1][1]}.raw"
-        )
-        # remove old track from playlist
-        old_track = playlist.pop(0)
-        print(f"- START PLAYING: {playlist[0][1]}")
-        if LOG_GROUP:
-            await self.send_playlist()
-        os.remove(os.path.join(
-            download_dir,
-            f"{old_track[1]}.raw")
-        )
-        if len(playlist) == 1:
-            return
-        await self.download_audio(playlist[1])
+    
 
     async def send_text(self, text):
         group_call = self.group_call
@@ -121,32 +69,6 @@ class MusicPlayer(object):
             disable_notification=True
         )
         return message
-
-    async def download_audio(self, song):
-        group_call = self.group_call
-        client = group_call.client
-        raw_file = os.path.join(client.workdir, DEFAULT_DOWNLOAD_DIR,
-                                f"{song[1]}.raw")
-        #if os.path.exists(raw_file):
-            #os.remove(raw_file)
-        if not os.path.isfile(raw_file):
-            # credits: SpechiDe
-            #os.mkfifo(raw_file)
-            if song[3] == "telegram":
-                original_file = await bot.download_media(f"{song[2]}")
-            elif song[3] == "youtube":
-                original_file = youtube(song[2])
-            else:
-                original_file=wget.download(song[2])
-            ffmpeg.input(original_file).output(
-                raw_file,
-                format='s16le',
-                acodec='pcm_s16le',
-                ac=2,
-                ar='48k',
-                loglevel='error'
-            ).overwrite_output().run()
-            os.remove(original_file)
 
 
     async def start_radio(self):
