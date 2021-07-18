@@ -1,4 +1,4 @@
-# Regen & Mod by @shamilhabeebnelli
+# Regen & Mod by @sachin_official_admin
 # Pyrogram - Telegram MTProto API Client Library for Python
 # Copyright (C) 2017-2020 Dan <https://github.com/delivrance>
 #
@@ -52,7 +52,7 @@ HELP = """
 • `/update` __Update Current Settings n Restarts the Bot__
 
 © Powered By 
-[ __@mwklinks | @redbullfed__ ]
+[ __@AnikhaX_Music | @KicchaRequest_ ]
 """
 
 
@@ -80,7 +80,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Musics", url="https://t.me/AnikhaX_Music")
                         ]
                     ]
                 )
@@ -103,7 +103,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Resume", callback_data="rs")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url='https://t.me/mwksongs')
+                            InlineKeyboardButton("Musics", url='https://t.me/AnikhaX_Music')
                         ],
                     ]
                 )
@@ -127,7 +127,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs") 
+                            InlineKeyboardButton("Musics", url="https://t.me/AnikhaX_Music") 
                         ],
                     ]
                 )
@@ -151,7 +151,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Musics", url="https://t.me/AnikhaX_Music")
                             
                     ],
                 ]
@@ -162,13 +162,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="help":
         buttons = [
             [
-                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
+                InlineKeyboardButton('📢 Updates', url='https://t.me/KicchaRequest'),
+                InlineKeyboardButton('💬 Support', url='https://t.me/KicchaRequest')
                 ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
+                InlineKeyboardButton('🤖 Developer', url='https://t.me/sachin_official_admin'),
+                InlineKeyboardButton('🎧 Songs', url='https://t.me/AnikhaX_Music')
                 ],[
-                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
+                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/sachin9742s/mwk-musics'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
