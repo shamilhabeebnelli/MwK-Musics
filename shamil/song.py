@@ -1,5 +1,3 @@
-
-
 from pyrogram import Client, filters
 
 import youtube_dl
@@ -18,13 +16,10 @@ def time_to_seconds(time):
 
 ## Commands --------------------------------
 
-@Client.on_message(filters.command(['song']))
+@Client.on_message(filters.text)
 def a(client, message):
-    query = ''
-    for i in message.command[1:]:
-        query += ' ' + str(i)
     print(query)
-    m = message.reply('`Searching... Please Wait...`')
+    m = message.reply('🧐')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -55,15 +50,15 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 Nᴏᴛʜɪɴɢ Tᴏ Bᴇ Fᴏᴜɴᴅ 🥺 Oʀ Cʜᴇᴄᴋ Sᴩᴇʟʟɪɴɢ 🤗!**')
+            m.edit('**ഒന്നും കണ്ടെത്താൻ ആയില്ല**')
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with /song Command!**"
+            "**എവിടെയോ എന്തോ തകരാർ പോലെ**"
         )
         print(str(e))
         return
-    m.edit("`Bruh... Uploading... Please Wait...`")
+    m.edit("😎")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -78,7 +73,7 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**Sᴇᴇᴍꜱ Lɪᴋᴇ Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ 🥶 Report This @redbullfed!!**')
+        m.edit('**എവിടെയോ എന്തോ തകരാർ പോലെ 🤷🏻**')
         print(e)
     try:
         os.remove(audio_file)
