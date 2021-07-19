@@ -16,11 +16,13 @@ def time_to_seconds(time):
 
 ## Commands --------------------------------
 
-@Client.on_message(filters.text)
+@Client.on_message(filters.command(['song']))
 def a(client, message):
-    query=message.text
+    query = ''
+    for i in message.command[1:]:
+        query += ' ' + str(i)
     print(query)
-    m = message.reply('🧐')
+    m = message.reply('`Searching... Please Wait...`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -51,15 +53,15 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**ഒന്നും കണ്ടെത്താൻ ആയില്ല**')
+            m.edit('**👎 Nᴏᴛʜɪɴɢ Tᴏ Bᴇ Fᴏᴜɴᴅ 🥺 Oʀ Cʜᴇᴄᴋ Sᴩᴇʟʟɪɴɢ 🤗!**')
             return
     except Exception as e:
         m.edit(
-            "**എവിടെയോ എന്തോ തകരാർ പോലെ**"
+            "**Enter Song Name with /song Command!**"
         )
         print(str(e))
         return
-    m.edit("😎")
+    m.edit("`Bruh... Uploading... Please Wait...`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -74,10 +76,11 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**എവിടെയോ എന്തോ തകരാർ പോലെ 🤷🏻**')
+        m.edit('**Sᴇᴇᴍꜱ Lɪᴋᴇ Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ 🥶 Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
