@@ -21,7 +21,7 @@ def time_to_seconds(time):
 @Client.on_message(filters.text)
 def a(client, message):
     query = ''
-    for i in message.command[1:]:
+    for i in message.text[1:]:
         query += ' ' + str(i)
     print(query)
     m = message.reply('`Searching... Please Wait...`')
