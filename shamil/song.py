@@ -16,7 +16,7 @@ def time_to_seconds(time):
 
 ## Commands --------------------------------
 
-@Client.on_message(filters.text(['song']))
+@Client.on_message(filters.text)
 def a(client, message):
     query = ''
     for i in message.text[1:]:
