@@ -57,10 +57,6 @@ def a(client, message):
             print(e)
             m.edit('**👎 Nᴏᴛʜɪɴɢ Tᴏ Bᴇ Fᴏᴜɴᴅ 🥺 Oʀ Cʜᴇᴄᴋ Sᴩᴇʟʟɪɴɢ 🤗!**')
             return
-    except Exception as e:
-        m.edit(
-            "**Enter Song Name with /song Command!**"
-        )
         print(str(e))
         return
     m.edit("`Bruh... Uploading... Please Wait...`")
