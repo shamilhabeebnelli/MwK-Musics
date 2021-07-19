@@ -18,6 +18,7 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.text)
 def a(client, message):
+    query=message.text
     print(query)
     m = message.reply('🧐')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
