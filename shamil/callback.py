@@ -80,7 +80,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1")
                         ]
                     ]
                 )
@@ -103,7 +103,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Resume", callback_data="rs")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url='https://t.me/mwksongs')
+                            InlineKeyboardButton("Musics", url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
                         ],
                     ]
                 )
@@ -127,7 +127,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs") 
+                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1") 
                         ],
                     ]
                 )
@@ -151,7 +151,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/mwksongs")
+                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1")
                             
                     ],
                 ]
@@ -166,7 +166,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
                 InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/mwksongs')
+                InlineKeyboardButton('🎧 Songs', url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
                 ],[
                 InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
             ]
