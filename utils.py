@@ -37,7 +37,6 @@ bot.start()
 e=bot.get_me()
 USERNAME=e.username
 
-from user import USER
 STREAM_URL=Config.STREAM_URL
 CHAT=Config.CHAT
 GROUP_CALLS = {}
