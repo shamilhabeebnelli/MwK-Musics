@@ -6,7 +6,7 @@ import requests
 
 import os
 
-## Extra Fns -------------------------------
+## Extra Fns ------------------------------
 
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
