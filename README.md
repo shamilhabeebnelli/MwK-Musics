@@ -1,8 +1,6 @@
 # Bot To Stream Musics on PyTGcalls with Channel Support.
 
-A Telegram Bot to Play Audio in Voice Chats With Youtube and Deezer support.
-Supports Live streaming from youtube
-Supports Mega Radio Fm Streamings
+A Telegram Bot to Play Audio in Voice Chats With Supports Live streaming from youtube and Mega Radio Fm Streamings
 
 ```
 Please fork this repository don't import code
