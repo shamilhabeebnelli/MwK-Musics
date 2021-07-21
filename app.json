@@ -54,6 +54,11 @@
       "value": "https://bit.ly/MwKradio",
       "required": true
     },
+    "REPLY_MESSAGE": {
+      "description": "No_PM message for session account",
+      "value": "Hi Iam a bot, i can stream audios on vc.",
+      "required": true
+    },
     "ADMIN_ONLY": {
       "description": "Make All Commands Admin Only Usable Y/N",
       "value": "Y",
