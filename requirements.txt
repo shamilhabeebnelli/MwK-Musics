@@ -10,12 +10,3 @@ youtube_dl
 youtube_search_python
 youtube_search
 wget
-requests
-python-decouple
-aiofiles
-python-dotenv
-asyncio
-search_engine_parser
-Pillow
-future
-tswift
