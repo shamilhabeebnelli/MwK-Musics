@@ -44,10 +44,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
+                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilhabeeb'),
                 InlineKeyboardButton('🎧 Songs', url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
                 ],[
-                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
+                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/MwK-Musics/tree/Radio-only'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
