@@ -37,6 +37,7 @@ bot.start()
 e=bot.get_me()
 USERNAME=e.username
 
+from user import USER
 STREAM_URL=Config.STREAM_URL
 CHAT=Config.CHAT
 GROUP_CALLS = {}
@@ -51,7 +52,7 @@ msg=Config.msg
 
 class MusicPlayer(object):
     def __init__(self):
-        self.group_call = GroupCall(path_to_log_file='')
+        self.group_call = GroupCall(USER, path_to_log_file='')
         self.chat_id = None
 
 
