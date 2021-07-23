@@ -8,4 +8,4 @@ RUN apt install ffmpeg -y
 
 COPY . .
 
-CMD python3 main.
+CMD python3 main.py
