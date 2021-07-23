@@ -19,4 +19,3 @@ search_engine_parser
 Pillow
 future
 tswift
-ffmpeg
