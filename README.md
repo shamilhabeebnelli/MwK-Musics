@@ -2,27 +2,11 @@
 
 A Telegram Bot to Play Audio in Voice Chats With Supports Live streaming from youtube and Mega Radio Fm Streamings
 
-```
-Please fork this repository don't import code
-Made with Python3
-(C) @shamilhabeebnelli
-License -> https://github.com/shamilhabeebnelli/MwK-Musics/blob/master/LICENSE
-```
 
 ## Deploy to Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/shamilhabeebnelli/MwK-Musics/tree/Radio-only)
 
-
-### Deploy to VPS
-
-```sh
-git clone https://github.com/shamilhabeebnelli/MwK-Musics/tree/Radio-only
-cd MwK-Musics
-pip3 install -r requirements.txt
-# <Create Variables appropriately>
-python3 main.py
-```
 
 # Vars:
 1. `API_ID` : Get From my.telegram.org
