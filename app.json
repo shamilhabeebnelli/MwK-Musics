@@ -6,12 +6,6 @@
   "keywords": [
     "telegram",
     "bot",
-    "voicechat",
-    "music",
-    "python",
-    "pyrogram",
-    "pytgcalls",
-    "tgcalls",
     "voip"
   ],
   "env": {
@@ -64,7 +58,6 @@
       "value": "Y",
       "required": false
     },
-}
   },
   "formation": {
     "worker": {
