@@ -6,6 +6,12 @@
   "keywords": [
     "telegram",
     "bot",
+    "voicechat",
+    "music",
+    "python",
+    "pyrogram",
+    "pytgcalls",
+    "tgcalls",
     "voip"
   ],
   "env": {
@@ -51,13 +57,18 @@
     "REPLY_MESSAGE": {
       "description": "No_PM message for session account",
       "value": "Hi Iam a bot, i can stream audios on vc.",
-      "required": true
+      "required": false
     },
     "ADMIN_ONLY": {
       "description": "Make All Commands Admin Only Usable Y/N",
       "value": "Y",
       "required": false
     },
+    "DUR": {
+      "description": "Keep This Blank if you dont now what it is, Maximum duration of song to play.(Optional)",
+      "value": "300",
+      "required": false
+}
   },
   "formation": {
     "worker": {
