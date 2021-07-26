@@ -5,7 +5,7 @@ A Telegram Bot to Play Audio in Voice Chats With Supports Live streaming from yo
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/shamilhabeebnelli/MwK-Musics)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/shamilhabeebnelli/MwK-Musics/tree/main)
 
 
 # Vars:
