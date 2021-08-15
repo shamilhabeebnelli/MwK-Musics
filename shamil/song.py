@@ -6,21 +6,44 @@ import requests
 
 import os
 
-## Extra Fns ------------------------------
+from config import Config
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-# Convert hh:mm:ss to seconds
+
+BUTTON1="📜 Source Code 📜"
+B2="telegram.dog/shamilhabeeb"
+OWNER="Owner"
+GITCLONE="github.com/shamilhabeebnelli/song-bot"
+ABS="Developer"
+APPER="shamilhabeeb"
+
+@Client.on_message(filters.command('start') & filters.private)
+async def start(client, message):
+    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                 ],[
+                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
+                    InlineKeyboardButton(ABS, url=B2)
+            ]
+          ]
+        ),
+        reply_to_message_id=message.message_id
+    )
+
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-
-## Commands --------------------------------
+THUMB="bit.ly/thumbnil"
 
 @Client.on_message(filters.text)
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('🧐')
+    m = message.reply('fetching datas from m.youtube.com')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -44,37 +67,36 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[MwK-Musics]" 
+            performer = f"[𝕊𝕞𝕃]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
         except Exception as e:
             print(e)
-            m.edit('**ഒന്നും കണ്ടെത്താൻ ആയില്ല**')
+            m.edit('**👎 Nothing to found 🥺 Try with another!**')
             return
     except Exception as e:
         m.edit(
-            "**എവിടെയോ എന്തോ തകരാർ പോലെ**"
+            "**found nothing, please try again**"
         )
         print(str(e))
         return
-    m.edit("😎")
+    m.edit("**m.youtube.com responded, uploading...**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/joinchat/OsJr6i6C05E0NmQ1">[MwK] Musics</a>'
+        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwklinks">[MwK] Song-Bot</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
-        message.delete()
     except Exception as e:
-        m.edit('**എവിടെയോ എന്തോ തകരാർ പോലെ 🤷🏻**')
+        m.edit('**An Internal error occured; Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
