@@ -21,62 +21,29 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters
 import signal
-from utils import USERNAME, FFMPEG_PROCESSES
 from config import Config
 import os
 import sys
-U=USERNAME
-CHAT=Config.CHAT
 
+ABS="Developer"
+APPER="shamilhabeeb"
+OWNER="Owner"
+GITCLONE="github.com/shamilhabeebnelli/song-bot"
+B2="telegram.dog/shamilnelli"
+BUTTON1="📜 Source Code 📜"
 
-HOME_TEXT = "<b>Helo, [{}](tg://user?id={})\n\n• Iam A Bot Project by MwK MusicS\n• I Can Manage Group VC's\n\n• Hit /help to know about available commands.</b>"
-HELP = """
-🎧 <b>I Can Play Music On VoiceChats 🤪</b>
-
-🎶 **Admin Commands**:
-
-• `/r` __Start Radio__
-• `/sr` __Stops Radio Stream__
-
-© Powered By 
-[ __@mwklinks | @redbullfed__ ]
-"""
-
-
-
-@Client.on_message(filters.command('start'))
+@Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    buttons = [
-        [
-        InlineKeyboardButton("❔ How To Use Me ❔", callback_data="help"),
-                ],[
-                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
-                ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
-                ],[
-                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/MwK-Musics/tree/Radio-only'),
-    ]
-    ]
-    reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_text(text=HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
-    await message.delete()
-
-
-@Client.on_message(filters.command("help"))
-async def show_help(client, message):
-    buttons = [
-        [
-                InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
-                InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
-                ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
-                ],[
-                InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/MwK-Musics/tree/Radio-only'),
-        ]
-    ]
-    reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_text(text=HELP, reply_markup=reply_markup)
-    await message.delete()
+    await message.reply_photo(photo="https://telegra.ph/file/2a35fca576aa49de77c98.jpg", caption="Hi {},\nIam A Simple Youtube to Mp3 Downloader Bot,\n\nSend me Any Songs name or YouTube link, I can help you with uploading that to TG".format(message.from_user.mention),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                 ],[
+                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/elonmusk_010"),
+                    InlineKeyboardButton(ABS, url=B2)
+            ]
+          ]
+        ),
+        reply_to_message_id=message.message_id
+    )
