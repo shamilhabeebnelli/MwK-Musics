@@ -35,15 +35,11 @@ U=USERNAME
 LOG_GROUP=Config.LOG_GROUP
 ADMIN_ONLY=Config.ADMIN_ONLY
 DURATION_LIMIT = Config.DURATION_LIMIT
-ARQ_API=Config.ARQ_API
 session = ClientSession()
-arq = ARQ("https://thearq.tech",ARQ_API,session)
 playlist=Config.playlist
 
 ADMINS=Config.ADMINS
 CHAT=Config.CHAT
-LOG_GROUP=Config.LOG_GROUP
-playlist=Config.playlist
 
 @Client.on_message(filters.command(["play", f"play@{U}"]) | filters.audio & filters.private)
 async def yplay(_, message: Message):
@@ -214,88 +210,6 @@ async def yplay(_, message: Message):
         else:
             await message.reply_text(pl)
     await message.delete()
-            
-        
-   
-@Client.on_message(filters.command(["dplay", f"dplay@{U}"]))
-async def deezer(_, message):
-    if ADMIN_ONLY == "Y":
-        admins=[626664225]
-        grpadmins=await _.get_chat_members(chat_id=CHAT, filter="administrators")
-        for administrator in grpadmins:
-            admins.append(administrator.user.id)
-        if message.from_user.id not in admins:
-            await message.reply_sticker("CAACAgUAAxkBAAIJM2DTpi52NSM-O-KnYcC1IzbJos8HAAK6AQACsm0wVffnRbQlKgeTHwQ")
-            await message.delete()
-            return
-    user=f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-    if " " in message.text:
-        text = message.text.split(" ", 1)
-        query = text[1]
-    else:
-        await message.reply_text("lmao 😇, lemma gib me anything to play : `/d <song name>`")
-        return
-    user=f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-    group_call = mp.group_call
-    msg = await message.reply("**Fetching Required Song From Deezer...**")
-    try:
-        songs = await arq.deezer(query,1)
-        if not songs.ok:
-            await msg.edit(songs.result)
-            return
-        url = songs.result[0].url
-        title = songs.result[0].title
-
-    except:
-        await msg.edit("Sed Lyf... Nothing to be found")
-        return
-    data={1:title, 2:url, 3:"deezer", 4:user}
-    playlist.append(data)
-    group_call = mp.group_call
-    client = group_call.client
-    if len(playlist) == 1:
-        m_status = await msg.edit(
-            f"Downloading and Transcoding..."
-        )
-        await mp.download_audio(playlist[0])
-        if 1 in RADIO:
-            if group_call:
-                group_call.input_filename = ''
-                RADIO.remove(1)
-                RADIO.add(0)
-            process = FFMPEG_PROCESSES.get(CHAT)
-            if process:
-                process.send_signal(signal.SIGTERM)
-        if not group_call.is_connected:
-            await mp.start_call()
-        file=playlist[0][1]
-        group_call.input_filename = os.path.join(
-            client.workdir,
-            DEFAULT_DOWNLOAD_DIR,
-            f"{file}.raw"
-        )
-        await m_status.delete()
-        print(f"- START PLAYING: {playlist[0][1]}")
-    else:
-        await msg.delete()
-    if not playlist:
-        pl = f"{emoji.NO_ENTRY} Empty playlist"
-    else:
-        pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n" + "\n".join([
-            f"**{i}**. **📻{x[1]}**\n   👤**Requested by:** {x[4]}"
-            for i, x in enumerate(playlist)
-            ])
-    if LOG_GROUP and message.chat.id != LOG_GROUP:
-        await message.reply_text(pl)
-    for track in playlist[:2]:
-        await mp.download_audio(track)
-    if LOG_GROUP:
-        await mp.send_playlist()
-    else:
-        await message.reply_text(pl)
-    await message.delete()
-
-
 
 @Client.on_message(filters.command(["current", f"current@{U}"]))
 async def player(_, m: Message):
