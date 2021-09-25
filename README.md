@@ -15,7 +15,7 @@ A Telegram Bot to Play Audio in Voice Chats With Supports Live streaming from yo
 1. `API_ID` : Get From my.telegram.org
 2. `API_HASH` : Get from my.telegram.org
 3. `BOT_TOKEN` : @Botfather
-4. `SESSION_STRING` : Generate From here [![GenerateStringName](https://img.shields.io/badge/Telegram-PyroSession-blueblack)](https://t.me/genstr_bot)
+4. `SESSION_STRING` : Generate From [here](https://t.me/genstr_bot)
 5. `CHAT` : ID of Channel/Group where the bot plays Music.
 6. `LOG_GROUP` : Group to send Playlist, if CHAT is a Group
 7. `ADMINS` : ID of users who can use admin commands.
