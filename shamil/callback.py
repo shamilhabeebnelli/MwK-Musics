@@ -1,4 +1,4 @@
-# Regen & Mod by @shamilhabeebnelli
+# A Subinps Project
 # Pyrogram - Telegram MTProto API Client Library for Python
 # Copyright (C) 2017-2020 Dan <https://github.com/delivrance>
 #
@@ -28,31 +28,31 @@ HELP = """
 🎧 <b>I Can Play Music On VoiceChats 🤪</b>
 
 🎶 **Common Commands**:
-• `/c`  __Show current playing song__
+• `/current`  __Show current playing song__
 • `/help` __Show help for commands__
 • `/mwk` __Shows the playlist__
 • `/stickerid` __To Get Id Of Replied Sticker__
 
 🎶 **Admin Commands**:
-• `/p`  __Reply to an audio file or YouTube link to play it or use /p <song name>__
-• `/d` __Play music from Deezer, Use /d <song name>__
-• `/sk [n]` __...Skip current or n where n >= 2__
-• `/j`  __Join voice chat__
-• `/l`  __Leave current voice chat__
+• `/play`  __Reply to an audio file or YouTube link to play it or use /p <song name>__
+• `/dplay` __Play music from Deezer, Use /d <song name>__
+• `/skip [n]` __...Skip current or n where n >= 2__
+• `/join`  __Join voice chat__
+• `/leave`  __Leave current voice chat__
 • `/mwk`  __Check which VC is joined__
-• `/sp`  __Stop playing__
-• `/r` __Start Radio__
-• `/sr` __Stops Radio Stream__
-• `/rp`  __Play from the beginning__
-• `/cl`  __Remove unused RAW PCM files__
-• `/ps` __Pause playing__
-• `/rs` __Resume playing__
-• `/m`  __Mute in VC__
-• `/um`  __Unmute in VC__
+• `/stop`  __Stop playing__
+• `/radio` __Start Radio__
+• `/stopradio` __Stops Radio Stream__
+• `/replay`  __Play from the beginning__
+• `/clear`  __Remove unused RAW PCM files__
+• `/pause` __Pause playing__
+• `/resume` __Resume playing__
+• `/mute`  __Mute in VC__
+• `/unmute`  __Unmute in VC__
 • `/update` __Update Current Settings n Restarts the Bot__
 
 © Powered By 
-[ __@mwklinks | @redbullfed__ ]
+[ __@mwkBoTs | @subin_works__ ]
 """
 
 
@@ -80,7 +80,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1")
+                            InlineKeyboardButton("Report Bug", url="subinps_bot")
                         ]
                     ]
                 )
@@ -99,11 +99,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Replay", callback_data="rp"),
-                            InlineKeyboardButton("Resume", callback_data="rs")
+                            InlineKeyboardButton("Replay", callback_data="replace"),
+                            InlineKeyboardButton("Resume", callback_data="resume")
                         ],[
-                            InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
+                            InlineKeyboardButton("Skip", callback_data="skip"),
+                            InlineKeyboardButton("Updates", url='t.me/mwkBoTs')
                         ],
                     ]
                 )
@@ -127,7 +127,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1") 
+                            InlineKeyboardButton("Support", url="https://t.me/redbullfed") 
                         ],
                     ]
                 )
@@ -151,7 +151,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("Pause", callback_data="ps")
                         ],[
                             InlineKeyboardButton("Skip", callback_data="sk"),
-                            InlineKeyboardButton("Musics", url="https://t.me/joinchat/OsJr6i6C05E0NmQ1")
+                            InlineKeyboardButton("Updates", url="t.me/subin_works")
                             
                     ],
                 ]
@@ -165,8 +165,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('📢 Updates', url='https://t.me/mwklinks'),
                 InlineKeyboardButton('💬 Support', url='https://t.me/redbullfed')
                 ],[
-                InlineKeyboardButton('🤖 Developer', url='https://t.me/shamilnelli'),
-                InlineKeyboardButton('🎧 Songs', url='https://t.me/joinchat/OsJr6i6C05E0NmQ1')
+                InlineKeyboardButton('🤖 Developer', url='t.me/subinps'),
+                InlineKeyboardButton('Bugs', url='t.me/subin_works')
                 ],[
                 InlineKeyboardButton('📜 Source Code 📜', url='https://github.com/shamilhabeebnelli/mwk-musics'),
             ]
