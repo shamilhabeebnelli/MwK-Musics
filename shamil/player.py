@@ -25,7 +25,6 @@ from pyrogram.methods.messages.download_media import DEFAULT_DOWNLOAD_DIR
 from pyrogram.types import Message
 from utils import mp, RADIO, USERNAME, FFMPEG_PROCESSES
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 from pyrogram import Client
 from aiohttp import ClientSession
